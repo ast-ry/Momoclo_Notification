@@ -58,11 +58,12 @@ while true;do
 	# DLしたファイルのサイズを取得
         size=`wc -c < $filename`
         f_size=`expr $size`
-	# wget後のmd5ハッシュ値をチェック
+	# 各ファイルのmd5ハッシュ値をチェック
         md5sum $filename > md5_$i.out
         wget -O $filename $url 1>/dev/null 2>/dev/null
         c=`md5sum -c md5_$i.out 2>/dev/null`
-	# ファイルサイズが500Byte以上および差分が確認できた場合に更新ありとしてtweet
+	# ファイルサイズが500Byte以上およびmd5チェックによる差分が
+	# 確認できた場合に更新ありとしてtweet
         if [ $f_size -ge 500 ];then
           if [ "$filename: FAILED" = "$c" ];then
 	    echo "[$title] `date +%X` 更新あり $url_ #momoclo" | tw --pipe
