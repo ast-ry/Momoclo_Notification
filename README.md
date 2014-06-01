@@ -1,12 +1,12 @@
 ##Description  
-Update notification script of Momoiro Clover Z offcial site and member's blog.
+Update notification script of Momoiro Clover Z offcial site and member's blog.  
 It also has a function to post to Twitter using the TW.  
 
 How to use:  
 1. Install the tw using the gem  
-    # gem install tw
-2. Run the script in any directory
-    # ./Momoclo_Notification.sh
+    # gem install tw  
+2. Run the script in any directory  
+    # ./Momoclo_Notification.sh  
 
 ##Updated Libraries  
 
